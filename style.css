@@ -24,8 +24,8 @@ body {
     width: 100%;
     max-width: 420px;
     margin: 1em;
-    background-color: grey;
-    opacity: 70%;
+    background-color: #000000d0;
+    color: white;
 }
 
 .search {
@@ -43,15 +43,22 @@ button {
     align-items: center;
     justify-content: center;
     border: none;
+    background-color: #7c7c7c2b;
+}
+
+button:hover {
+    background: #7c7c7c8b;
 }
 
 .search-bar {
     border: none;
     outline: none;
-    padding: 0.5em;
+    padding: 1em;
     border-radius: 24px;
     font-family: inherit;
     font-size: 120%;
+    background-color: #7c7c7c2b;
+    color: white;
 }
 
 
