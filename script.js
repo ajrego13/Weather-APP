@@ -31,12 +31,12 @@ const changeElements = (data) => {
     let windSpeed = Math.floor(data.wind.speed)
    
 
-   cityEl.innerText = 'Weather in' + " " + data.name;
+   cityEl.innerText = 'Weather in' + " " + data.name + ',' + " " + data.sys.country;
    tempEl.innerText = temperature + '°F'
    changeImage(data); 
    descriptionEl.innerText = data.weather[0].description
-   humidityEl.innerText = data.main.humidity + "%"
-   windEl.innerText = windSpeed + ' ' + 'mph'
+   humidityEl.innerText = "Humidity: "+ data.main.humidity + "%"
+   windEl.innerText = "Wind: " + windSpeed + ' ' + 'mph'
 
 }
 
