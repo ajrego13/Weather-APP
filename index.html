@@ -6,26 +6,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
     <title>Weather App</title>
 </head>
 <body>
-    <header>
-        <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..">
-    </header>
-    <div class="cadd-wrap" id="mainEl">
-        <section class="location">
-            <div id='location' class="city"></div>
-        </section>
-        <div class="current">
-            <img src="" alt="" class="image" id="image">
-            <div class="temp"><span id="temp"></span><span>°F</span></div>
-            <div id="main" class="main"></div>
-            <div id ='description'class="description"></div>
-
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar" id="input">
+            <button id="button" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="search icon" width="1.5em" height="1.5em">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+              </button>
+        </div>
+        <div class="weather">
+            <h2 class="city" id="city" ></h2>
+            <h1 class="temp" id="temp" > </h1>
+            <img src="" alt="" class="icon" id="image">
+            <div class="description" id="description" ></div>
+            <div class="humidity" id="humidity" ></div>
+            <div class="wind" id="wind" ></div>
         </div>
     </div>
-
-
 </body>
 <script src="script.js"></script>
 </html>
