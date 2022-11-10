@@ -15,8 +15,7 @@ const getResults = async () => {
         let query = document.getElementById('input').value
         const response = await fetch(`${api.baseURL}weather?q=${query}&units=imperial&appid=${api.key}`); 
         const weatherData = await response.json();
-        console.log(query); 
-        console.log(weatherData)
+        
     changeElements(weatherData);
 } catch (error) {
     alert('city not found');
