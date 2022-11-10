@@ -18,7 +18,7 @@ const getResults = async () => {
         
     changeElements(weatherData);
 } catch (error) {
-    alert('city not found');
+    alert('city not found, please make sure you follow this format...city, state');
 }
     
 }
