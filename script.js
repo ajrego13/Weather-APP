@@ -5,12 +5,33 @@ const api = {
 }
 
 
-const button = document.getElementById('button').addEventListener('click', () => {
+
+//this section querys the API using the device's geolocation
+window.onload =  () => {
+    if(confirm('press ok to allow this app to use you geolocation')) {
+        navigator.geolocation.getCurrentPosition(getResultsWithGeo)
+    } 
+}
+
+const getResultsWithGeo = async (position) => {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude ;
+    const response = await fetch(`${api.baseURL}weather?lat=${latitude}&lon=${longitude}&appid=${api.key}`); 
+    const weatherData = await response.json(); 
+    console.log(weatherData)
+    changeElements(weatherData); 
+   }
+
+
+
+
+// this section querys the API using the searchbox
+ const button = document.getElementById('button').addEventListener('click', () => {
     return getResults()
 }); 
 
-
 const getResults = async () => {
+   
     try {
         let query = document.getElementById('input').value
         const response = await fetch(`${api.baseURL}weather?q=${query}&units=imperial&appid=${api.key}`); 
@@ -23,7 +44,7 @@ const getResults = async () => {
     
 }
 
-
+// dynamically changing teh UI based on Fetched Data
 const changeElements = (data) => {
     const cityEl = document.getElementById('city'); 
     const tempEl = document.getElementById('temp');
