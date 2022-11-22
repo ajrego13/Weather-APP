@@ -8,9 +8,8 @@ const api = {
 
 //this section querys the API using the device's geolocation
 window.onload =  () => {
-    if(confirm('Press OK to allow this app to use your devices Geolocation')) {
-        navigator.geolocation.getCurrentPosition(getResultsWithGeo)
-    } 
+    navigator.geolocation.getCurrentPosition(getResultsWithGeo)
+  
 }
 
 const getResultsWithGeo = async (position) => {
