@@ -17,7 +17,6 @@ const getResultsWithGeo = async (position) => {
     let longitude = position.coords.longitude ;
     const response = await fetch(`${api.baseURL}weather?lat=${latitude}&lon=${longitude}&appid=${api.key}`); 
     const weatherData = await response.json(); 
-    console.log(weatherData)
     changeElements(weatherData); 
    }
 
