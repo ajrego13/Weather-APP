@@ -17,7 +17,6 @@ const getResultsWithGeo = async (position) => {
     let longitude = position.coords.longitude ;
     const response = await fetch(`${api.baseURL}weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${api.key}`); 
     const weatherData = await response.json(); 
-    console.log(weatherData)
     changeElements(weatherData); 
    }
 
@@ -40,7 +39,7 @@ const getResults = async () => {
 } catch (error) {
     alert('city not found, please make sure you follow this format...city, state');
 }
-    
+    0
 }
 
 // dynamically changing teh UI based on Fetched Data
