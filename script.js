@@ -8,15 +8,16 @@ const api = {
 
 //this section querys the API using the device's geolocation
 window.onload =  () => {
-    navigator.geolocation.getCurrentPosition(getResultsWithGeo)
+    navigator.geolocation.getCurrentPosition(getResultsWithGeo);
   
 }
 
 const getResultsWithGeo = async (position) => {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude ;
-    const response = await fetch(`${api.baseURL}weather?lat=${latitude}&lon=${longitude}&appid=${api.key}`); 
+    const response = await fetch(`${api.baseURL}weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${api.key}`); 
     const weatherData = await response.json(); 
+    console.log(weatherData)
     changeElements(weatherData); 
    }
 
@@ -73,3 +74,5 @@ function changeImage (data) {
 
 
  
+
+
