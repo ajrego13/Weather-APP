@@ -26,7 +26,6 @@ const getResultsWithGeo = async (position) => {
     return getResults()
 }); 
 
-// api request
 const getResults = async () => {
    try {
         let query = document.getElementById('input').value
@@ -63,7 +62,6 @@ const changeElements = (data) => {
 function changeImage (data) {
     const image = document.getElementById('image'); 
     let img = data.weather[0].icon;
-    const baseImageSrc =  `http://openweathermap.org/img/wn/${img}@2x.png`
+    const baseImageSrc =  `http://openweathermap.org/img/wn/${img}@2x.png`;
     image.src = baseImageSrc;
-   
 }
